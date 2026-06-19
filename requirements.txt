@@ -1,0 +1,13 @@
+pandas>=2.0.0
+streamlit>=1.30.0
+google-play-scraper
+app-store-scraper
+requests
+yt-dlp
+youtube-transcript-api
+instaloader
+ntscraper
+google-generativeai
+plotly
+pyyaml
+beautifulsoup4
