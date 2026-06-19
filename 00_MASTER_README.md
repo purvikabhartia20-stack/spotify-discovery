@@ -66,7 +66,7 @@ These are the actual PM questions. Every output of this project ultimately exist
 - No Instagram API (locked down)
 
 ### Where social media comes in
-For Twitter, Instagram, and other sociak media platforms I will manually collect posts into a spreadsheet and upload it through the app. The app must support this upload as a normal feature.
+Twitter and Instagram will be scraped automatically using API-free libraries (ntscraper and instaloader).
 
 ### Tech stack — locked in, do not propose alternatives
 - **Language:** Python 3.11+
@@ -110,10 +110,10 @@ For Twitter, Instagram, and other sociak media platforms I will manually collect
 - **Volume:** Top 20 videos per query + up to 100 top-level comments per video
 - **Fields needed:** video title, video URL, date, comment text, like count, channel name
 
-### Source 5: Manual social media uploads (my responsibility, not scraped)
-- I will collect Twitter, Instagram, TikTok posts/comments manually into a CSV file
-- **Required CSV columns:** source (twitter/instagram/tiktok), date (YYYY-MM-DD), text, link, optional_handle
-- The app must have a file upload feature that accepts this CSV and adds rows to the main database
+### Source 5: Instagram and Twitter
+- **Libraries:** instaloader (Instagram), ntscraper (Twitter)
+- **Volume:** Top 50 posts each.
+- **Fields needed:** date, post text, link
 
 ---
 

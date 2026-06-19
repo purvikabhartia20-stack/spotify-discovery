@@ -1,8 +1,8 @@
-# Phase 2 — Scrapers: Pulling reviews from four sources
+# Phase 2 — Scrapers: Pulling reviews from six sources
 
 ## Goal
 
-This is where we actually start collecting real Spotify reviews. We build four small "robot collectors" — one each for Google Play Store, Apple App Store, Reddit, and YouTube. Each one knows how to visit its source, grab reviews, clean them up, and save them into our database. **At the end of this phase, the database should have somewhere between 5,000 and 10,000 real Spotify reviews from real users**, ready to be analyzed by AI in Phase 3.
+This is where we actually start collecting real Spotify reviews. We build six small "robot collectors" — one each for Google Play Store, Apple App Store, Reddit, YouTube, Instagram, and Twitter. Each one knows how to visit its source, grab reviews, clean them up, and save them into our database. **At the end of this phase, the database should have somewhere between 5,000 and 10,000 real Spotify reviews from real users**, ready to be analyzed by AI in Phase 3.
 
 Think of it like sending out four interns to four different libraries with instructions to bring back specific kinds of books. Each intern has their own routine, their own challenges, and brings back their findings to the same central shelf.
 
@@ -10,9 +10,9 @@ Think of it like sending out four interns to four different libraries with instr
 
 ## What you'll see when Phase 2 is done
 
-- Four scraper files exist inside `agents/` folder
+- Six scraper files exist inside `agents/` folder
 - Running `python agents/scrape_playstore.py` saves Play Store reviews into the database
-- Same for the other three: scrape_appstore.py, scrape_reddit.py, scrape_youtube.py
+- Same for the others: scrape_appstore.py, scrape_reddit.py, scrape_youtube.py, scrape_instagram.py, scrape_twitter.py
 - A simple SQL query (Antigravity will run it for you) shows the total number of reviews per source — Play Store ~2,000, App Store ~2,000, Reddit ~3,000, YouTube ~2,000
 - A small terminal command shows me 5 sample rows so I can confirm the data looks like real reviews
 - Each scraper logs its progress in plain English so I can see what's happening live
@@ -158,7 +158,7 @@ This is a moderate-cost phase. Four scrapers + one helper = ~5 files. Estimated 
 
 Each review becomes one row with these columns:
 - `id` — unique number
-- `source` — one of: playstore, appstore, reddit, youtube
+- `source` — one of: playstore, appstore, reddit, youtube, instagram, twitter
 - `country` — country code where applicable
 - `date` — when the review was posted
 - `rating` — 1-5 stars (only for Play Store / App Store)

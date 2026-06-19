@@ -36,8 +36,9 @@ Think of it like hiring a research assistant who reads each user review and writ
 
 1. **Load the prompt template** from prompts/tag_prompt.txt
 2. **Query the database** for all reviews where `tagged_at` is NULL (untagged)
-3. **Group them into batches of 20** (one batch = one Gemini API call — much cheaper than calling per review)
-4. **For each batch:**
+3. **Apply Token-Saving Strategy:** Truncate all review text to a maximum of 150 characters (or 800 for YouTube transcripts) before sending to Gemini to save tokens.
+4. **Group them into batches of 20** (one batch = one Gemini API call — much cheaper than calling per review)
+5. **For each batch:**
    - Insert the 20 reviews into the prompt
    - Send to Gemini 2.5 Flash (fast and free-tier-friendly)
    - Wait for response
