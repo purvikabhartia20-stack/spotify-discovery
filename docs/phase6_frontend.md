@@ -13,7 +13,7 @@ Think of it like the dashboard of a car. The engine (Phase 5) is already built a
 - A file `app.py` exists at the project root
 - Running `streamlit run app.py` opens my web browser to `http://localhost:8501`
 - The browser shows a clean app with the title "Spotify Discovery Engine"
-- Five tabs across the top: Dashboard, Refresh, Social Upload, Insights, Q&A
+- Five tabs across the top: Dashboard, Refresh Data, Insights Report, Ask Q&A, Upload Social Data
 - The Dashboard shows real charts with real data — not placeholder data
 - Clicking "Refresh All Data" actually triggers pipeline.py and shows live progress
 - The CSV upload tab accepts a file and confirms it was processed
@@ -29,7 +29,7 @@ Think of it like the dashboard of a car. The engine (Phase 5) is already built a
 |------|--------------|
 | `app.py` | The Streamlit web app, all 5 tabs in one file |
 | `ui/` | Folder for helper UI modules (charts, styling) |
-| `ui/charts.py` | Plotly chart functions: theme bar chart, sentiment timeline, segment pie |
+| `ui/charts.py` | Plotly chart functions: theme bar chart |
 | `ui/styles.py` | Custom CSS to make the app look polished (Spotify green accent) |
 | `ui/qa.py` | The Q&A logic — sends user question + review context to Gemini Pro |
 | `agents/export_pdf.py` | Converts the Markdown report to PDF |
@@ -44,12 +44,11 @@ At the top: 4 metric cards
 - Total reviews in corpus
 - Reviews added since last refresh
 - Date of last refresh
-- Overall sentiment score (% positive)
+
 
 Below: 4 charts in a 2×2 grid
-- Theme breakdown (bar chart, biggest to smallest)
-- Sentiment over time (line chart, monthly)
-- User segment pie (donut chart)
+- Theme breakdown (bar chart, biggest to smallest, "Other" excluded to avoid clutter)
+
 - Top pain points table (sortable, with severity score)
 
 Below that: A small list "Recent high-severity reviews" with 5 examples
@@ -65,17 +64,14 @@ When I click the button:
 
 Below the button: "Recent runs" table showing last 10 refreshes with date, duration, new reviews, errors.
 
-### Tab 3: Social Upload
-A file uploader widget for CSV files. Instructions next to it explaining the expected format with a downloadable template CSV.
+### Tab 5: Upload Social Data
+A file uploader widget for CSV files. Instructions next to it explaining the expected format with a downloadable template/sample CSV.
 
 When I upload a file:
-- The app validates it
-- Shows me a preview of the first 5 rows
-- A "Confirm upload" button
-- After confirming, it merges into the database and triggers tagging on those rows
-- Shows result: "Added 234 social media posts. Tagging in progress..."
-
-Below: "Upload history" — last 10 uploads with date, source breakdown, row counts.
+- The app parses it for `platform` and `content`
+- Shows me a preview of the first few rows
+- A "Process & Insert to Database" button appears
+- After clicking, it hashes and injects the raw text into the SQLite DB so it can be tagged on the next Refresh.
 
 ### Tab 4: Insights
 The Markdown insight report rendered cleanly on the page. Section headers act as a left-sidebar nav: jump to Question 1, 2, 3 etc.
@@ -95,6 +91,12 @@ When I type a question (e.g. "What do power users say about Discover Weekly?"):
 - At the bottom of the answer: "Based on 30 reviews from your corpus" with expandable list of which reviews were used as evidence
 
 Chat history persists for the current session so I can ask follow-up questions.
+
+### Deep Dive: Review Explorer
+A dedicated section in the Dashboard Tab that lets you read the raw data:
+- Filter by Source (App Store, Play Store, Reddit, YouTube, Twitter, Instagram)
+- Filter by Theme
+- See exactly what real users wrote.
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Goal
 
-We have thousands of reviews sitting in the database, but they're just raw text — useless until someone reads them and decides what each one is about. That "someone" is Gemini AI. In this phase, we build a robot that picks up each review, sends it to Gemini with a very specific question, and saves Gemini's answer back into the database. Each review gets six labels: what it's about, whether it's positive or negative, what kind of user wrote it, how serious the complaint is, what they were trying to do, and a one-line summary. **At the end of this phase, every review in our database has these six labels filled in.**
+We have thousands of reviews sitting in the database, but they're just raw text — useless until someone reads them and decides what each one is about. That "someone" is Gemini AI. In this phase, we build a robot that picks up each review, sends it to Gemini with a very specific question, and saves Gemini's answer back into the database. Each review gets four labels: what it's about, how serious the complaint is, what they were trying to do, and a one-line summary. **At the end of this phase, every review in our database has these labels filled in.**
 
 Think of it like hiring a research assistant who reads each user review and writes you a sticky note: "This person is frustrated because Discover Weekly keeps showing the same artist." Now instead of reading thousands of reviews, you can read sticky notes and group them.
 
@@ -14,7 +14,7 @@ Think of it like hiring a research assistant who reads each user review and writ
 - A file `prompts/tag_prompt.txt` exists with the exact instructions sent to Gemini
 - Running `python agents/tag_reviews.py` processes every untagged review in the database
 - Live progress: "Tagged 50/3,000... 100/3,000..."
-- After it finishes, every review row has values in the theme, sentiment, segment, pain_severity, behavior_intent, and summary columns
+- After it finishes, every review row has values in the theme, pain_severity, behavior_intent, and summary columns
 - A small report at the end shows: total tagged, total failed, estimated API cost (should be near zero on free tier)
 - I can manually inspect 30 random tagged reviews and confirm the labels make sense
 
@@ -43,7 +43,7 @@ Think of it like hiring a research assistant who reads each user review and writ
    - Send to Gemini 2.5 Flash (fast and free-tier-friendly)
    - Wait for response
    - Parse the JSON response (a list of 20 tag objects)
-   - For each tag object, save its 6 fields to the matching review in the database
+   - For each tag object, save its 4 fields to the matching review in the database
    - Mark `tagged_at` with current timestamp
 5. **Handle bad responses gracefully:**
    - If Gemini returns invalid JSON → retry once with stricter "return ONLY valid JSON" instruction
@@ -66,8 +66,6 @@ Output format — return a JSON array with one object per review, in the same or
   {
     "review_id": <integer matching input>,
     "theme": "<one of: discovery_difficulty, recommendation_quality, repeat_play_loop, search_problems, mood_matching, onboarding_issues, playlist_issues, audio_quality, pricing, ads, other>",
-    "sentiment": "<one of: positive, neutral, negative, mixed>",
-    "segment": "<one of: casual_listener, power_user, genre_specific, new_user, returning_user, unclear>",
     "pain_severity": <integer 1 to 5, where 1=minor annoyance, 5=app-breaking>,
     "behavior_intent": "<one short phrase describing what the user is trying to achieve, e.g. 'find new artists in my genre', 'wind down for sleep', 'discover music for road trips'>",
     "summary": "<one sentence summarizing the user's core point in your own words>"
@@ -80,8 +78,6 @@ Rules:
 - "discovery_difficulty" = user CAN'T find new music they like
 - "recommendation_quality" = recommendations exist but are bad/wrong
 - "repeat_play_loop" = same songs/artists keep coming back
-- A 5-star review praising discovery is sentiment=positive but theme can still be "discovery_difficulty" if they're saying it's fixed
-- If unsure about segment, use "unclear" rather than guessing wrong
 - Be precise. A vague "this app sucks" without specifics → theme="other", behavior_intent="general dissatisfaction"
 
 Reviews to tag:

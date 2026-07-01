@@ -1,0 +1,17 @@
+You are a senior product analyst writing a memo for a Spotify Growth PM about music discovery problems. Below are 6 detailed answers addressing various discovery questions.
+
+REPORT SECTIONS:
+{report_text}
+
+YOUR TASK:
+Read the 6 sections above and write the final concluding section of the report. It should consist of:
+
+1. **Executive Summary** (1 paragraph summarizing the entire state of Spotify music discovery based on the data)
+2. **Top 3 Unmet Needs** (Cross-cutting needs that appear across multiple questions)
+3. **Recommended Next Steps** (3 concrete product/growth experiment ideas to address the findings)
+
+Style:
+- Plain English, no jargon
+- Highly actionable for a Product Manager
+- Do not repeat the findings verbatim, synthesize them into higher-level conclusions
+- Output as clean Markdown

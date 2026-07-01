@@ -11,7 +11,7 @@ Think of this like setting up a new desk on day one of a job: laptop, login cred
 ## What you'll see when Phase 1 is done
 
 - A folder called `spotify-discovery/` exists on the laptop with the right structure
-- A file called `config.yaml` exists with your one API key filled in
+- A file called `config.yaml` exists with your API keys filled in (Gemini and YouTube)
 - A command called `python verify_setup.py` runs and prints "✅ All systems ready" with no errors
 - An empty database file `data/reviews.db` exists with all the right empty tables created
 - A `requirements.txt` file lists every library this project needs
@@ -24,7 +24,7 @@ If all five things are true, Phase 1 is complete.
 
 | File | What it does |
 |------|--------------|
-| `config.yaml` | Stores your one API key safely (Gemini) |
+| `config.yaml` | Stores your API keys safely (Gemini, YouTube) |
 | `requirements.txt` | Lists every Python library to install |
 | `verify_setup.py` | A small check script that tests each connection |
 | `data/reviews.db` | Empty SQLite database with table structure created |
@@ -37,10 +37,10 @@ If all five things are true, Phase 1 is complete.
 ## Step-by-step plan (what Antigravity will do)
 
 1. **Create the folder structure.** Build empty folders: `agents/`, `data/`, `data/social_uploads/`, `reports/`, `prompts/`, `docs/`.
-2. **Write requirements.txt** listing all libraries: google-play-scraper, app-store-scraper, requests, yt-dlp, youtube-transcript-api, instaloader, ntscraper, google-generativeai, streamlit, plotly, pandas, pyyaml, beautifulsoup4.
+2. **Write requirements.txt** listing all libraries: google-play-scraper, requests, google-generativeai, streamlit, plotly, pandas, pyyaml, beautifulsoup4, google-api-python-client.
 3. **Install all libraries** with one command (`pip install -r requirements.txt`).
-4. **Create config.yaml template** with empty slots for the one API key. Add comments explaining where each key comes from.
-5. **Create the database** — open SQLite, create a `reviews` table with all the columns we'll need (id, source, country, date, rating, text, url, scraped_at, theme, sentiment, segment, pain_severity, behavior_intent, summary, tagged_at). Also create a `runs` table to track each refresh. Also create a `sources` table to remember the last_scraped_at timestamp per source.
+4. **Create config.yaml template** with empty slots for the API keys (Gemini, YouTube). Add comments explaining where each key comes from.
+5. **Create the database** — open SQLite, create a `reviews` table with all the columns we'll need (id, source, country, date, rating, text, url, scraped_at, theme, pain_severity, behavior_intent, summary, tagged_at). Also create a `runs` table to track each refresh. Also create a `sources` table to remember the last_scraped_at timestamp per source.
 6. **Write verify_setup.py** — a small script that loads each API key and makes a tiny test call (1 Reddit post, 1 Gemini request, 1 YouTube search). It prints clear ✅ or ❌ for each connection.
 7. **Tell me to fill in the one API key.** Pause and wait.
 8. **After I confirm keys are filled in,** run verify_setup.py to confirm everything works.
@@ -70,16 +70,22 @@ If all five things are true, Phase 1 is complete.
 
 ## What I need to do BEFORE Phase 1 starts
 
-Get these one free API key. Each takes 5 minutes max. Save them in a temporary doc — I'll paste them into config.yaml when Antigravity asks.
+Get these two free API keys. Each takes 5 minutes max. Save them in a temporary doc — I'll paste them into config.yaml when Antigravity asks.
 
-### Key 3: Gemini API (one key)
+### Key 1: Gemini API
 1. Go to **aistudio.google.com**
 2. Sign in with your Google account (same one as your Gemini Pro subscription)
 3. On the left sidebar, click "Get API key"
 4. Click "Create API key in new project"
 5. Copy the key
 
-That's it. Total time: 15 minutes if it's your first time, 5 minutes if you've done it before.
+### Key 2: YouTube Data API v3
+1. Go to **console.cloud.google.com**
+2. Create a new project and enable the YouTube Data API v3
+3. Create Credentials -> API Key
+4. Copy the key
+
+That's it. Total time: 15 minutes.
 
 ---
 

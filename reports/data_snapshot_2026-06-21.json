@@ -1,0 +1,264 @@
+{
+  "date": "2026-06-21",
+  "total_analyzed": 344,
+  "themes": {
+    "other": 218,
+    "ads": 48,
+    "pricing": 36,
+    "audio_quality": 15,
+    "playlist_issues": 14,
+    "recommendation_quality": 9,
+    "mood_matching": 2,
+    "repeat_play_loop": 1,
+    "onboarding_issues": 1
+  },
+  "severities": {
+    "3": 276,
+    "5": 52,
+    "1": 10,
+    "4": 4,
+    "2": 2
+  },
+  "quotes_used": [
+    {
+      "source": "appstore",
+      "date": "2026-06-19T02:52:49-07:00",
+      "pain_severity": 5,
+      "text": "Trust is eroded.\nAfter years I unsubscribed to Spotify premium. Not being able to filter out AI generated music, learning about the abhorrent and blatant bottom line mission this company is on - just ew. No thanks."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T00:24:31-07:00",
+      "pain_severity": 5,
+      "text": "Paid subscription\nWhy am I seeing three ads before a podcast, which has three more ads when paying for Spotify??????"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T00:23:52-07:00",
+      "pain_severity": 5,
+      "text": "it\u2019s stuck\nIt\u2019s on mix and I can\u2019t undo it and I don\u2019t wanna pay premium just to listen my music in latest added \ud83d\ude21"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T00:09:09-07:00",
+      "pain_severity": 5,
+      "text": "Ugh\nThe amount of commercials is insane and inconsistent. To the point I prefer to use YouTube which also has commercials but at least they\u2019re more tolerable and understand how to properly shuffle through playlists."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T23:45:43-07:00",
+      "pain_severity": 5,
+      "text": "Meh\nThe music is great, the transitions between songs is okay\u2014 but the constant ads are the problem. Like, I\u2019d be listening to a row of two songs in my queue, and then I\u2019m struck blind by a ROW of FIVE ads that are each 30 seconds to 1 minute long. I appreciate the opportunity of getting plus, or whatever it\u2019s called, but the constant stream of ads is overdoing it\u2026"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T23:09:25-07:00",
+      "pain_severity": 5,
+      "text": "The best features are going, going\u2026\nWhen your company exists to take money away from musicians and their fans, you\u2019d think the best idea is to leave in the functional features they all love. Why are lyrics now unavailable on my phone, yet every. Single. Song. Has an AI blurb that nobody wanted or asked for? I will say, it\u2019s nice they finally rolled out high definition audio. Now, if only they could roll out a higher share of royalties to artists, and ban all these AI bots\u2026"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T22:51:34-07:00",
+      "pain_severity": 5,
+      "text": "Pay wall\nThe amount of paywalls this app has is sickening"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T21:45:36-07:00",
+      "pain_severity": 5,
+      "text": "Has been getting worse and worse\nSince a few updates ago the app is nearly unusable. I\u2019m on a fairly new iPhone 13 (all updated). App crashes throughout the day without warning, is extremely slow to load (10-15s between tapping on a song and it playing), downloads not working. Really considering switching after over 10 years with Spotify."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T21:03:47-07:00",
+      "pain_severity": 5,
+      "text": "Terrible app\nMoney hungry app, that constantly increases our Price but doesn\u2019t give us more listening hours on Audiobooks or Ad free Podcasts. You can have more hours by waiting you have BUY THEM!\n\n  1 star. 4 thumbs Down."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T21:02:54-07:00",
+      "pain_severity": 5,
+      "text": "Pages won\u2019t load\nI pay a subscription to use your service but after the last update, it still hasn\u2019t fixed an issue Spotify has had for months. When you click on a podcast page, it doesn\u2019t load the shows. All you get is the 3 dots flashing. It never loads. I\u2019m now cancelling my subscription, had enough of the continuous faults that never get fixed. If I can\u2019t use your app the way it\u2019s meant to work and have to pay for the inconvenience, why bother. Waste of money."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T19:57:59-07:00",
+      "pain_severity": 5,
+      "text": "Terrible Terrible App\nCongratulations Spotify developers you have managed to destroy our listening experience with your updates for our iPads. \nWe have 2 iPads in the house and I first thought it was just a deterioration in our older one but it is the same on our newer one too. \nI don\u2019t know what you have done but app tries to load and fails it\u2019s always loading or you try to search something and it fails and says to reload. \nSeriously poor show!\nNo issues with your app on our iPhones YET."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T19:11:54-07:00",
+      "pain_severity": 5,
+      "text": "Bad Service\nI hate this streaming app so much"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T17:49:42-07:00",
+      "pain_severity": 5,
+      "text": "Same service new price\nNothing has changed nothing has been improved and they just keep upping the subscription price. What a joke"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T17:07:22-07:00",
+      "pain_severity": 5,
+      "text": "So money hungry\nHow come we cant loop a song without premium?? And we cant pick the songs in the playlist without premium,and you also cant play them in order?!?!"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T17:02:53-07:00",
+      "pain_severity": 5,
+      "text": "Terrible soundcloud is 100% better\nMore ads than songs atleast with soundcloud you can avoid. Some songs on here aren\u2019t available its terrible quite frankly"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T16:45:16-07:00",
+      "pain_severity": 5,
+      "text": "Waste app\n0 rating only for money, each month paying 199 but no good waste of money no good song"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T16:09:49-07:00",
+      "pain_severity": 5,
+      "text": "Ad\nAd is much times"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T15:44:50-07:00",
+      "pain_severity": 5,
+      "text": "Audiobooks faulty\nMy audiobooks keeps repeating chapters. Has been happening for about a month. Can\u2019t seem to be able to fix it. Glitch in the app!"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T14:17:42-07:00",
+      "pain_severity": 5,
+      "text": "greedy, greedy people\nevery time i make a playlist i can\u2019t even listen to it because it adds all of its stupid songs. they should make the free one better smh. do not recommend. why are they so greedy? they do not need to put 4 ads in between each song it ruins the mood. and how come i can\u2019t control what order i want to listen to the song? oh because you want more money. this company is so greedy that it won\u2019t allow low-middle class to listen to music comfortably only people who are rich enough can. what is this inequality. i\u2019m so disappointed, it\u2019s 2026, be better."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T14:14:33-07:00",
+      "pain_severity": 5,
+      "text": "Ads \ud83e\udd2c\nWay too many idiot ads."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T13:34:14-07:00",
+      "pain_severity": 5,
+      "text": "Waste of money\nEverything, and I mean everything is premium. If I can\u2019t listen to air conditioning beats, I would spend money on my own music app."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T12:02:37-07:00",
+      "pain_severity": 5,
+      "text": "This app was what Karl Marx aimed to eradicate\nThis is one of the most horrid apps I\u2019ve ever witnessed. I don\u2019t know what sadist created this but the concept of you being treated like a serf if u don\u2019t pay for premium disgusts me. It\u2019s a music app and you\u2019re just unable to listen to music on phone if ur a third class citizen. 6 skips per HOUR and u only get to CHOOSE what song YOU listen to 6 times. Religious people are stupid for believing there could possibly be a God when this is what\u2019s happening in his supposed garden of Eden. And just like what Elon wants   I\u2019m gonna keep the app bc I want my Spotify wrapped. Maybe if this country uses more child slave labour I\u2019ll have wages high enough to both pay for Spotify premium and heat my house."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T09:13:19-07:00",
+      "pain_severity": 5,
+      "text": "Boo\nPay to listen everything"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T08:49:55-07:00",
+      "pain_severity": 5,
+      "text": "Royalty Dispersion\nI love the diverse genres of music and the natural algorithmic selections. I just wish the musicians received more financial return on each stream.\n\nOver the last year Spotify has been really lagging with loading especially now that it has videos."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T08:08:48-07:00",
+      "pain_severity": 5,
+      "text": "Laggy Startup\nIt is severely laggy at startup. It takes several minutes to load up after opening and is super slow."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T07:56:43-07:00",
+      "pain_severity": 5,
+      "text": "Plz stop making everything about premium\nI\u2019ve never had this issue before, but for some reason I can\u2019t replay songs because the song bar won\u2019t move how much I tap on it, and the rewind button is greyed out and I can\u2019t get rid of it no matter how hard I try. And apparently the internet has told me that\u2019s a feature when you don\u2019t have premium so it\u2019s forcing me to pay for premium, but I don\u2019t have enough money for premium! I really hope that you can fix this so that I can listen on your app daily like I used to, but for now I\u2019m staying off it so that you guys can stop being some kind of greedy corporate"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T06:39:23-07:00",
+      "pain_severity": 5,
+      "text": "Horrible\nThey are gouging the prices again ,"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T05:57:44-07:00",
+      "pain_severity": 5,
+      "text": "Soon every real artist will be replace\nSpotify,Seriously? Its full of ai artist don\u2019t forget that everyone pay your bills are real human being. I am so disappointed"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T05:47:02-07:00",
+      "pain_severity": 5,
+      "text": "Forced to watch advertisements\nI don\u2019t understand that paying a subscription means being forced to watch advertisements"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-18T04:08:55-07:00",
+      "pain_severity": 5,
+      "text": "Always ads!\nHave premium and I still get pop ups every time I open the app that I have to dismiss! I\u2019m over it and wonder why I\u2019m paying so much!"
+    },
+    {
+      "source": "playstore",
+      "date": "2026-06-19T19:01:36",
+      "pain_severity": 4,
+      "text": "greedy company. removed my dj x feature on my student plan nou i need to pay 5 times the price just to get it back"
+    },
+    {
+      "source": "playstore",
+      "date": "2026-06-19T18:54:59",
+      "pain_severity": 4,
+      "text": "This app is horrible! The fact that I am straight up forced to buy premium is wild! This deserves 1 star!"
+    },
+    {
+      "source": "playstore",
+      "date": "2026-06-19T18:43:04",
+      "pain_severity": 4,
+      "text": "worst app, it's like i need Spotify premium to even play smth. I'm in a mobile and i can't loop songs unless i have premium, and as a student, I'm not permitted to buy any subscriptions. we know you need income, but genuinely stop. The amount of ads is just horrific, every two songs, it's a fricking ad. improve this Spotify, really."
+    },
+    {
+      "source": "playstore",
+      "date": "2026-06-19T19:03:47",
+      "pain_severity": 3,
+      "text": "i would have rated 5 stars but the reason is a few months ago only one ad used to come after half an hour but now ad comes of 1 to 1.5 minutes after a little bit of time \ud83d\ude1e\ud83d\ude1e\ud83d\ude1e\ud83d\ude1e\ud83d\ude1e\ud83d\ude1e\ud83d\ude1e"
+    },
+    {
+      "source": "playstore",
+      "date": "2026-06-19T18:55:22",
+      "pain_severity": 3,
+      "text": "Give us back the smaller widget. I do not want Spotify taking up a third of my home screen. also, there's no way to tell the app \"I really don't like this band, stop playing their music\""
+    },
+    {
+      "source": "playstore",
+      "date": "2026-06-19T18:54:28",
+      "pain_severity": 3,
+      "text": "do not play the same song which is searching"
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T04:10:13-07:00",
+      "pain_severity": 3,
+      "text": "Had it for years\nI\u2019ve had Spotify for almost 10 years, I upgraded to premium bc I listen to music so much \ud83e\udd23 and also got annoyed with the ads. But personally I love Spotify always have."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T04:02:19-07:00",
+      "pain_severity": 3,
+      "text": "Fast speaking\nWhen listening to podcasts soundtrack playback is faster than it should be. Tends only to be spoken programs that suffer as music is still at correct speed."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T03:35:27-07:00",
+      "pain_severity": 3,
+      "text": "Recommended songs\nThe recommends songs are not based off my wants.  Too many ads and the price is too high\u2026 I do like the feature of adding songs in order for the que."
+    },
+    {
+      "source": "appstore",
+      "date": "2026-06-19T03:27:07-07:00",
+      "pain_severity": 3,
+      "text": "Good App Over Others But Data 2 Stars\nGenuinely it\u2019s a really good app but 2 stars because why am I paying a subscription for so much of my data to be collected on me. I guess the desensitization and new normal of surveillance. .-."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+You are analyzing user reviews of Spotify to help a Product Manager understand music discovery problems. For each review below, return a structured JSON object.
+
+Output format — return a JSON array with one object per review, in the same order:
+[
+  {
+    "review_id": <integer matching input>,
+    "theme": "<one of: discovery_difficulty, recommendation_quality, repeat_play_loop, search_problems, mood_matching, onboarding_issues, playlist_issues, audio_quality, pricing, ads, other>",
+    "pain_severity": <integer 1 to 5, where 1=minor annoyance, 5=app-breaking>,
+    "behavior_intent": "<one short phrase describing what the user is trying to achieve, e.g. 'find new artists in my genre', 'wind down for sleep', 'discover music for road trips'>",
+    "summary": "<one sentence summarizing the user's core point in your own words>"
+  }
+]
+
+Rules:
+- If a review is not in English, translate mentally and tag it the same way
+- If a review is spam or off-topic (e.g. crypto promo), set theme to "other" and pain_severity to 1
+- "discovery_difficulty" = user CAN'T find new music they like
+- "recommendation_quality" = recommendations exist but are bad/wrong
+- "repeat_play_loop" = same songs/artists keep coming back
+- Be precise. A vague "this app sucks" without specifics → theme="other", behavior_intent="general dissatisfaction"
+
+Reviews to tag:
+{reviews_json}
+
+Return ONLY the JSON array. No preamble, no markdown code fences, just raw JSON starting with [ and ending with ].

@@ -21,8 +21,6 @@ CREATE TABLE IF NOT EXISTS reviews (
     url TEXT,
     scraped_at TEXT,
     theme TEXT,
-    sentiment TEXT,
-    segment TEXT,
     pain_severity INTEGER,
     behavior_intent TEXT,
     summary TEXT,

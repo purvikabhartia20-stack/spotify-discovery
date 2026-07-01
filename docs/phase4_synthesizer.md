@@ -14,7 +14,7 @@ Think of it like hiring a senior analyst. You hand them a stack of 3,000 tagged 
 - A file `prompts/synth_prompt.txt` exists with the synthesis instructions
 - Running `python agents/synthesize.py` produces a Markdown file at `reports/insight_report_YYYY-MM-DD.md`
 - The report has 6 clearly labeled sections — one per PM question
-- Each section contains: 2-3 patterns identified, 3-5 verbatim user quotes per pattern, segment breakdowns where relevant
+- Each section contains: 2-3 patterns identified, 3-5 verbatim user quotes per pattern
 - The report ends with an "Unmet Needs" summary and "Recommended Next Steps" — both PM-style writing
 - I can read the entire report in 10 minutes and understand the state of music discovery from real user voices
 
@@ -33,12 +33,11 @@ Think of it like hiring a senior analyst. You hand them a stack of 3,000 tagged 
 
 ## Step-by-step plan
 
-1. **Pull aggregate data from the database** — counts per theme, sentiment distribution, segment breakdown, top complaints by frequency, top complaints by severity
+1. **Pull aggregate data from the database** — counts per theme, top complaints by frequency, top complaints by severity
 2. **Select representative quotes** — for each theme, pick 10-15 reviews that best exemplify the pattern (highest pain_severity within that theme, sorted by date for recency mix)
 3. **Build six prompts**, one for each PM question, each containing:
    - The question
    - Relevant theme counts and percentages
-   - Segment breakdown for that question
    - 15-20 verbatim review quotes with metadata
 4. **Send each prompt to Gemini 2.5 Pro** (not Flash — we want deeper reasoning here)
 5. **Receive a structured Markdown answer** with patterns identified, quotes embedded, and PM-style framing
@@ -61,12 +60,11 @@ THE QUESTION:
 
 DATA SUMMARY:
 - Total reviews analyzed: [number]
-- Breakdown by user segment: [data]
 - Top themes related to this question: [data with frequencies]
 - Severity distribution: [data]
 
-VERBATIM USER REVIEWS (15 selected, balanced across segments):
-[20 quotes with metadata: source, date, segment, pain_severity]
+VERBATIM USER REVIEWS (15 selected):
+[20 quotes with metadata: source, date, pain_severity]
 
 YOUR TASK:
 Write a structured answer (300-500 words) with:
@@ -79,9 +77,7 @@ Write a structured answer (300-500 words) with:
    - 2-3 verbatim quotes as evidence (use real review text, attribute by source: "Play Store review, May 2026, casual_listener")
    - How widespread it is (rough %)
 
-3. **Segment differences** — which user types feel this most?
-
-4. **One concrete implication** — what this means for product decisions
+3. **One concrete implication** — what this means for product decisions
 
 Style:
 - Plain English, no jargon
@@ -117,7 +113,7 @@ Output as clean Markdown.
 - [ ] The quotes look like real Spotify users, not generic
 - [ ] The patterns identified actually make sense as PM insights, not just topic labels
 - [ ] The "Unmet Needs" section synthesizes across all 6 — not just a list
-- [ ] Segment differences are called out where relevant
+
 - [ ] Total report length is between 3,000 and 6,000 words (any less = thin, any more = unreadable)
 - [ ] I can confidently present this report to a Spotify Growth PM and they'd find it useful
 

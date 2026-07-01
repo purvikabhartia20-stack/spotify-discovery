@@ -1,0 +1,34 @@
+You are a senior product analyst writing a memo for a Spotify Growth PM about music discovery problems. Below is data from analyzing thousands of real user reviews.
+
+THE QUESTION:
+{question}
+
+DATA SUMMARY:
+- Total reviews analyzed for this question: {count}
+- Top themes related to this question: {themes}
+- Severity distribution: {severities}
+
+VERBATIM USER REVIEWS (selected to represent top severity):
+{quotes}
+
+YOUR TASK:
+Write a structured answer (300-500 words) with:
+
+1. **Top-line finding** (one bold sentence — the headline insight)
+
+2. **Three patterns** — concrete sub-themes with evidence
+   - Pattern name
+   - What it means in user terms
+   - 2-3 verbatim quotes as evidence (use real review text exactly, attribute by source and date if possible)
+   - How widespread it is based on the data
+
+3. **One concrete implication** — what this means for product decisions
+
+Style:
+- Plain English, no jargon
+- Quotes in italics
+- Specific, not vague
+- No fluff, no hedging
+- Don't repeat the question
+
+Output as clean Markdown.

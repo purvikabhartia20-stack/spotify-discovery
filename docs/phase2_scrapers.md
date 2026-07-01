@@ -10,11 +10,11 @@ Think of it like sending out four interns to four different libraries with instr
 
 ## What you'll see when Phase 2 is done
 
-- Six scraper files exist inside `agents/` folder
+- Five scraper files exist inside `agents/` folder
 - Running `python agents/scrape_playstore.py` saves Play Store reviews into the database
-- Same for the others: scrape_appstore.py, scrape_reddit.py, scrape_youtube.py, scrape_instagram.py, scrape_twitter.py
-- A simple SQL query (Antigravity will run it for you) shows the total number of reviews per source — Play Store ~2,000, App Store ~2,000, Reddit ~3,000, YouTube ~2,000
-- A small terminal command shows me 5 sample rows so I can confirm the data looks like real reviews
+- Same for the others: scrape_appstore.py, scrape_reddit.py, scrape_youtube.py
+- A simple SQL query shows the total number of reviews per source.
+- Manual CSV uploads cover Instagram and Twitter, processed securely via the dashboard.
 - Each scraper logs its progress in plain English so I can see what's happening live
 
 ---
@@ -23,10 +23,10 @@ Think of it like sending out four interns to four different libraries with instr
 
 | File | What it does |
 |------|--------------|
-| `agents/scrape_playstore.py` | Pulls reviews from Google Play Store |
-| `agents/scrape_appstore.py` | Pulls reviews from Apple App Store |
-| `agents/scrape_reddit.py` | Pulls posts and comments from Reddit |
-| `agents/scrape_youtube.py` | Pulls comments from YouTube videos |
+| `agents/scrape_playstore.py` | Pulls reviews from Google Play Store using google-play-scraper |
+| `agents/scrape_appstore.py` | Pulls reviews directly from Apple's public iTunes RSS feed |
+| `agents/scrape_reddit.py` | Pulls posts from Reddit via XML RSS endpoints to bypass rate limits |
+| `agents/scrape_youtube.py` | Pulls comments using the official YouTube Data API v3 |
 | `agents/_common.py` | Shared helper functions used by all scrapers (database connection, deduplication, logging) |
 | `data/reviews.db` | Now contains real review data |
 | `data/runs.log` | Updated with timestamps and counts from this run |
@@ -47,24 +47,23 @@ Think of it like sending out four interns to four different libraries with instr
 9. Print a progress message every 100 reviews
 
 ### App Store scraper
-Same flow as Play Store but using app-store-scraper library and Spotify's iOS app ID (324684580). Loop through US, GB, IN, DE.
+1. Fetch data directly from Apple's public iTunes RSS feed (bypassing restrictive scraping libraries).
+2. Loop through countries (US, GB, CA, AU, IN).
+3. Insert reviews into the database.
 
 ### Reddit scraper
-1. Fetch data from Reddit using public JSON endpoints
-2. Loop through 5 subreddits: r/spotify, r/Music, r/truespotify, r/SpotifyThrowbacks, r/LetsTalkMusic
-3. For each subreddit, search 7 terms: "discover weekly", "release radar", "recommendations", "algorithm", "for you", "daily mix", "music discovery"
-4. For each search, take top 50 posts from last 6 months
-5. For each post, save the title and body. Then load top 15 comments and save each.
-6. Track every post URL we've already saved so we don't double-process
-7. Insert as separate rows: one for the post, one per comment
+1. Fetch data from Reddit using public XML RSS endpoints (`new.rss`) to completely bypass unauthenticated JSON rate-limiting (429 errors).
+2. Target subreddits like r/spotify and r/truespotify.
+3. Parse the XML, strip HTML, and save the genuine posts.
 
 ### YouTube scraper
-1. Fetch metadata using yt-dlp and transcripts via youtube-transcript-api
-2. Loop through 5 search queries (listed in master README)
-3. For each query, take top 20 videos
-4. For each video, pull up to 100 top-level comments using the commentThreads endpoint
-5. Save video title and URL with each comment
-6. Track YouTube quota usage in runs.log — quit gracefully if approaching daily limit
+1. Authenticate with the official Google API Client using the YouTube API key from `config.yaml`.
+2. Search for videos matching queries like "Spotify discover weekly".
+3. Fetch the top comments for those videos via the `commentThreads` endpoint.
+4. Save the actual human comments into the database.
+
+### Social Uploads (Instagram/Twitter)
+Since Instagram and Twitter strictly block unauthenticated scraping from cloud networks, they are not handled by automated scripts. Instead, users manually export CSV data and upload it via the "Upload Social Data" tab in the Streamlit dashboard, which injects them directly into the database.
 
 ### Shared helper (_common.py)
 - Database connection function (open, close safely)
@@ -165,7 +164,7 @@ Each review becomes one row with these columns:
 - `text` — the actual review content
 - `url` — link back to the source if available
 - `scraped_at` — when our scraper pulled it
-- `theme`, `sentiment`, `segment`, `pain_severity`, `behavior_intent`, `summary` — all empty for now (Phase 3 fills these in)
+- `theme`, `pain_severity`, `behavior_intent`, `summary` — all empty for now (Phase 3 fills these in)
 - `tagged_at` — empty for now
 
 The tagging columns existing now but empty is intentional — we don't need to change the schema in Phase 3, just populate.
